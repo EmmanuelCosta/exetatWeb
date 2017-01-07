@@ -24,7 +24,7 @@ export class SectionFormComponent implements OnInit {
    
   }
 ngOnInit(): void {
-    this.section={};
+    this.section=new Section();
   }
 
 newSection():void{

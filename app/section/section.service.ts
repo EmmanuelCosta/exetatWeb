@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http,Jsonp  } from '@angular/http';
+import { Headers, Http,URLSearchParams  } from '@angular/http';
 import { Section } from './Section';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SectionService{
 
-      private const EXETATAPI="http://localhost:3300";
+      private EXETATAPI="http://localhost:3300";
     // private getAllSectionUrl = 'http://localhost:3300/sections'; 
      //private createSectionUrl = 'http://localhost:3300/section'; 
 
-      constructor(private jsonp: Jsonp,private http: Http) { 
+      constructor(private http: Http) { 
       }
       
     getSections(): Promise<Section[]> {
@@ -27,9 +27,9 @@ export class SectionService{
    
     let sectionJson = JSON.stringify(section) ;
     let body = new URLSearchParams();
-    console.log("-- "+sectionJson);
+  //  console.log("-- "+sectionJson);
     body.set("section", sectionJson);
-    console.log("-- "+body.toString());
+   // console.log("-- "+body.toString());
     this.http.post(this.EXETATAPI+"/section",body.toString(),{headers:headers})
     .toPromise()
      .catch(this.handleError);
