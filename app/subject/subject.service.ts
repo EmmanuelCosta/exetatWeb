@@ -19,20 +19,20 @@ export class SubjectService{
                .catch(this.handleError);
   }
 
-//   newSection(section:Section):void{
-//     let headers= new Headers();
-//     headers.append('Content-Type', 'application/x-www-form-urlencoded');
+  newSubject(section:Section):void{
+    let headers= new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
    
-//     let sectionJson = JSON.stringify(section) ;
-//     let body = new URLSearchParams();
-//   //  console.log("-- "+sectionJson);
-//     body.set("section", sectionJson);
-//    // console.log("-- "+body.toString());
-//     this.http.post(this.EXETATAPI+"/section",body.toString(),{headers:headers})
-//     .toPromise()
-//      .catch(this.handleError);
-//   }
+    let sectionJson = JSON.stringify(section) ;
+    let body = new URLSearchParams();
+  //  console.log("-- "+sectionJson);
+    body.set("subject", sectionJson);
+   // console.log("-- "+body.toString());
+    this.http.post(this.EXETATAPI+"/subject",body.toString(),{headers:headers})
+    .toPromise()
+     .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> {
     console.log('An error occurred', error); // for demo purposes only

@@ -48,14 +48,18 @@ choosedSections(section:Section):void{
 }
 ngOnInit(): void {
     this.subject=new Subject();
+    this.subject.section=[];
     this.getSections();
     this.checkedSections=[];
   }
 
 newSubject():void{
-    this.subjectService.newSubject(this.subject);
-//this.location.replaceState('/'); // clears browser history so they can't navigate with back button
-//this.router.navigate(['/subjects']);
+    for( var section of this.checkedSections){
+        this.subject.section.push(section._id);
+    }
+    this.subjectService.newSubject(this.subject);   
+    this.location.replaceState('/'); // clears browser history so they can't navigate with back button
+    this.router.navigate(['/subjects']);
 }
   onSubmit() {
     
