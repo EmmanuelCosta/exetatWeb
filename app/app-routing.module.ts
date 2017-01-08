@@ -6,6 +6,8 @@ import { SectionFormComponent } from './section/section-form.component';
 import { SubjectsComponent } from './subject/subjects.component';
 import { SubjectFormComponent } from './subject/subject-form.component';
 import { ItemsComponent } from './item/items.component';
+import { ItemFormComponent } from './item/item-form.component';
+
 
 
 
@@ -17,7 +19,7 @@ const routes: Routes = [
   { path: 'subjects',  component: SubjectsComponent },
   { path: 'addSubject',  component: SubjectFormComponent },
    { path: 'items',  component: ItemsComponent },
-  //{ path: 'addItem',  component: ItemFormComponent },
+  { path: 'addItem',  component: ItemFormComponent },
 
 ];
 @NgModule({

@@ -19,20 +19,20 @@ export class ItemService{
                .catch(this.handleError);
   }
 
-//   newItem(section:Section):void{
-//     let headers= new Headers();
-//     headers.append('Content-Type', 'application/x-www-form-urlencoded');
+  newItem(item:Item):void{
+    let headers= new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
    
-//     let sectionJson = JSON.stringify(section) ;
-//     let body = new URLSearchParams();
-//   //  console.log("-- "+sectionJson);
-//     body.set("item", sectionJson);
-//    // console.log("-- "+body.toString());
-//     this.http.post(this.EXETATAPI+"/item",body.toString(),{headers:headers})
-//     .toPromise()
-//      .catch(this.handleError);
-//   }
+    let itemJson = JSON.stringify(item) ;
+    let body = new URLSearchParams();
+    //  console.log("-- "+itemJson);
+    body.set("item", itemJson);
+   // console.log("-- "+body.toString());
+    this.http.post(this.EXETATAPI+"/item",body.toString(),{headers:headers})
+    .toPromise()
+     .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> {
     console.log('An error occurred', error); // for demo purposes only
