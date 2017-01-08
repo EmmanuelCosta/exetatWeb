@@ -11,7 +11,6 @@ import { SectionService }         from './section.service';
 
 export class SectionsComponent implements OnInit {
   sections: Section[];
-  selectedsection: Section;
   constructor(
     private sectionService: SectionService,
     private router: Router) { }
@@ -23,9 +22,5 @@ export class SectionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSections();
-  }
-
-  onSelect(section: Section): void {
-    this.selectedsection = section;
   }
 }

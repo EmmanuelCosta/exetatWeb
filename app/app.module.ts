@@ -11,11 +11,18 @@ import { AppComponent }  from './app.component';
 
 import { HeaderDetailComponent } from './header/header-detail.component';
 import { FooterDetailComponent } from './footer/footer-detail.component';
+
 import { AccueilComponent } from './accueil/accueil.component';
 import { AppRoutingModule } from './app-routing.module';
+
 import { SectionService }   from './section/section.service';
 import { SectionsComponent } from './section/sections.component';
 import { SectionFormComponent } from './section/section-form.component';
+
+import { SubjectService }   from './subject/subject.service';
+import { SubjectsComponent } from './subject/subjects.component';
+import { SubjectFormComponent } from './subject/subject-form.component';
+
 
 
 
@@ -32,8 +39,11 @@ import { SectionFormComponent } from './section/section-form.component';
                   FooterDetailComponent,
                   AccueilComponent,
                   SectionsComponent,
-                  SectionFormComponent],
-  providers: [ SectionService ],
+                  SectionFormComponent,
+                  SubjectsComponent,
+                  SubjectFormComponent],
+  providers: [ SectionService,
+               SubjectService ],
 
   bootstrap:    [ AppComponent ]
 })

@@ -10,13 +10,14 @@
                     <h2 class="intro-text text-center">
                       <strong>{{section.name}}</strong>                        
                     </h2>
-                    <hr>            
+                    <hr>  
+                     <div *ngIf="section.subject.length==0">
+                        <h3 class="intro-text text-center">
+                      <strong> Pas de matières pour cette section</strong>
+                        </h3>                 
+                      </div>          
               <ul class="subjects">
-                <div *ngIf="section.subject.length==0">
-                  <h3 class="intro-text text-center">
-                 <strong> Pas de matières pour cette section</strong>
-                  </h3>                 
-                </div>
+               
               <li *ngFor="let subject of section.subject" >
                   <h5 class="intro-text">{{subject.name}}</h5>
               </li>
