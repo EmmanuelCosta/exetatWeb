@@ -23,6 +23,9 @@ import { SubjectService }   from './subject/subject.service';
 import { SubjectsComponent } from './subject/subjects.component';
 import { SubjectFormComponent } from './subject/subject-form.component';
 
+import { ItemService }   from './item/item.service';
+import { ItemsComponent } from './item/items.component';
+
 
 
 
@@ -41,9 +44,12 @@ import { SubjectFormComponent } from './subject/subject-form.component';
                   SectionsComponent,
                   SectionFormComponent,
                   SubjectsComponent,
-                  SubjectFormComponent],
+                  SubjectFormComponent,
+                  ItemsComponent
+                  ],
   providers: [ SectionService,
-               SubjectService ],
+               SubjectService,
+                ItemService],
 
   bootstrap:    [ AppComponent ]
 })

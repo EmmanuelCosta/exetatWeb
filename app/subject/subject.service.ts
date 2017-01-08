@@ -19,15 +19,15 @@ export class SubjectService{
                .catch(this.handleError);
   }
 
-  newSubject(section:Section):void{
+  newSubject(subject:Subject):void{
     let headers= new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
    
-    let sectionJson = JSON.stringify(section) ;
+    let subjectJson = JSON.stringify(subject) ;
     let body = new URLSearchParams();
-  //  console.log("-- "+sectionJson);
-    body.set("subject", sectionJson);
+  //  console.log("-- "+subjectJson);
+    body.set("subject", subjectJson);
    // console.log("-- "+body.toString());
     this.http.post(this.EXETATAPI+"/subject",body.toString(),{headers:headers})
     .toPromise()

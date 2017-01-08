@@ -4,7 +4,7 @@ export class Section{
    
     subject:[
     {
-        id:string,
+        id:string;
         name:string
       }
     ]

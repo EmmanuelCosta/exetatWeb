@@ -5,6 +5,7 @@ import { SectionsComponent } from './section/sections.component';
 import { SectionFormComponent } from './section/section-form.component';
 import { SubjectsComponent } from './subject/subjects.component';
 import { SubjectFormComponent } from './subject/subject-form.component';
+import { ItemsComponent } from './item/items.component';
 
 
 
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'addSection',  component: SectionFormComponent },
   { path: 'subjects',  component: SubjectsComponent },
   { path: 'addSubject',  component: SubjectFormComponent },
+   { path: 'items',  component: ItemsComponent },
+  //{ path: 'addItem',  component: ItemFormComponent },
 
 ];
 @NgModule({
