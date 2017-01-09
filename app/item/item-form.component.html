@@ -14,23 +14,28 @@
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label for="serie" >Série</label>
-                                <input id="serie" name="serie" type="text" class="form-control" required [(ngModel)]="item.serie" #serie="ngModel"  />
-                            
-                                <div [hidden]="serie.valid || serie.pristine"
+                                <!--<input id="serie" name="serie" type="text" class="form-control" required [(ngModel)]="item.serie" #serie="ngModel"  />-->
+                                
+                                <select class="form-control" id="serie" [(ngModel)]="item.serie" name="serie" required>
+                                    <option *ngFor="let serie of series" [value]="serie">{{serie}}</option>
+                                </select>
+
+
+                                <!--<div [hidden]="serie.valid || serie.pristine"
                                     class="alert alert-danger">
                                   La serie de l'item est obligatoire
-                                </div>
+                                </div>-->
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label for="year" >Année</label>
-                                <input id="year" name="year" type="text" class="form-control" required [(ngModel)]="item.year" #year="ngModel"  />
-                            
+                                <input id="year" name="year" type="text" class="form-control" required [(ngModel)]="item.year" #year="ngModel" pattern="^(19|20)\d{2}$"/>
+                            {{item.year}}
                                 <div [hidden]="year.valid || year.pristine"
                                     class="alert alert-danger">
-                                  L'année de l'item est obligatoire
+                                  L'année de l'item est obligatoire et doit comporter une année valide[exemple:1989]
                                 </div>
                             </div>
                         </div>
@@ -42,8 +47,7 @@
                             <div class="form-group col-lg-4" *ngFor="let subject of subjects">
                                
                                 <label >
-                                    <input id={{subject._id}} class="form-control" name="subject" type="checkbox" [value]="subject._id" (change)="choosedSubjects(subject)"  />
-                                    {{subject.name}}   
+                                    <input id={{subject._id}} class="form-control" name="subject" type="checkbox" [value]="subject._id" (change)="choosedSubjects(subject)"/>  
                                 </label>                           
                             </div>
                         </fieldset>

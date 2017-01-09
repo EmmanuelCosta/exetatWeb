@@ -22,13 +22,11 @@ export class ItemService{
   newItem(item:Item):void{
     let headers= new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-   
-    let itemJson = JSON.stringify(item) ;
+    
+    let itemJson = JSON.stringify(item); 
     let body = new URLSearchParams();
-    //  console.log("-- "+itemJson);
     body.set("item", itemJson);
-   // console.log("-- "+body.toString());
+    
     this.http.post(this.EXETATAPI+"/item",body.toString(),{headers:headers})
     .toPromise()
      .catch(this.handleError);

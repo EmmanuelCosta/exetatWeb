@@ -55,12 +55,17 @@ ngOnInit(): void {
     this.checkedSubjects=[];
 
     this.series=["A","B","C","D"];
+    this.allowYears=[];
+    for(var i=1900;i<2018;i++){
+        this.allowYears.push(i);
+    }
   }
 
 newItem():void{
     for( var subject of this.checkedSubjects){
         this.item.subject.push(subject._id);
     }
+    console.log("===> "+this.item.year);
     this.itemService.newItem(this.item);   
     this.location.replaceState('/'); // clears browser history so they can't navigate with back button
     this.router.navigate(['/items']);
