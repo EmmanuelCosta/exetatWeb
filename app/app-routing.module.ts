@@ -7,7 +7,9 @@ import { SubjectsComponent } from './subject/subjects.component';
 import { SubjectFormComponent } from './subject/subject-form.component';
 import { ItemsComponent } from './item/items.component';
 import { ItemFormComponent } from './item/item-form.component';
-
+import { QuestionService }   from './question/question.service';
+//import { QuestionsComponent } from './question/questions.component';
+import { QuestionFormComponent } from './question/question-form.component';
 
 
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'addSubject',  component: SubjectFormComponent },
    { path: 'items',  component: ItemsComponent },
   { path: 'addItem',  component: ItemFormComponent },
+  //  { path: 'questions',  component: QuestionsComponent },
+  { path: 'addQuestion/:item_id',  component: QuestionFormComponent },
 
 ];
 @NgModule({
